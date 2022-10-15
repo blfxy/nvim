@@ -41,8 +41,11 @@ packer.startup({ function(use)
         -- }
         -- use {
         --         "nvim-telescope/telescope.nvim", tag = '0.1.x',
-        --         -- or                            , branch = '0.1.x',
-        --         requires = { { "nvim-lua/plenary.nvim" } }
+        --         requires = {
+        --                 { "nvim-lua/plenary.nvim" },
+        --                 { "windwp/nvim-ts-autotag" },
+        --                 { "p00f/nvim-ts-rainbow" }
+        --         }
         -- }
         -- use { "glepnir/dashboard-nvim" }
         -- use { "lukas-reineke/indent-blankline.nvim" }
@@ -57,7 +60,8 @@ packer.startup({ function(use)
         -- }
         -- use { "tpope/vim-surround" }
         -- use { "numToStr/Comment.nvim" }
-        use { "p00f/nvim-ts-rainbow"}
+        -- use { "p00f/nvim-ts-rainbow"}
+        -- use { "windwp/nvim-autopairs", }
 end,
         config = {
                 display = {

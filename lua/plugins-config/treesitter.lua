@@ -7,9 +7,11 @@ require('nvim-treesitter.configs').setup {
         -- A list of parser names, or "all"
         ensure_installed = { "lua", "rust", "html", "javascript", "css", "tsx", "typescript", "vue", "json", "markdown",
                 "scss", "svelte", "toml" },
+        -- windwp/nvim-ts-autotag
         autotag = {
                 enable = true,
         },
+        -- p00f/nvim-ts-rainbow
         rainbow = {
                 enable = true,
                 -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
