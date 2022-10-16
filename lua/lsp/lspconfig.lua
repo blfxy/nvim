@@ -1,6 +1,6 @@
 require("mason").setup()
 -- 自动安装语言服务列表
-local servers = { "rust_analyzer", "sumneko_lua", "volar", "vuels", "html", "cssls", "jsonls", "tsserver", "taplo", }
+local servers = { "rust_analyzer", "sumneko_lua", "volar", "vuels", "html", "cssls", "jsonls", "tsserver", "taplo", "marksman"}
 require("mason-lspconfig").setup({
         ensure_installed = servers
 })

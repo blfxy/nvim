@@ -47,9 +47,9 @@ packer.startup({ function(use)
                         -- { "p00f/nvim-ts-rainbow" },
                         -- { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
                         -- { "nvim-telescope/telescope-file-browser.nvim" },
-                        {"ahmedkhalf/project.nvim"},
                 }
         }
+        -- use { "ahmedkhalf/project.nvim" }
         -- use { "glepnir/dashboard-nvim" }
         -- use { "lukas-reineke/indent-blankline.nvim" }
         -- use {
