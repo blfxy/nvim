@@ -6,9 +6,15 @@ end
 bufferline.setup({
         options = {
                 mode = 'buffer',
+                -- close_command = "Bdelete! %d",
+                -- diagnostics = "nvim_lsp",
                 offsets = {
                         { filetype = 'NvimTree' }
-                }
+                },
+                indicator = {
+                        icon = '▎', -- this should be omitted if indicator style is not 'icon'
+                        style = "icon" --'icon' | 'underline' | 'none',
+                },
         },
         highlights = {
                 buffer_selected = {
@@ -30,4 +36,4 @@ local map = vim.api.nvim_set_keymap
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- "moll/vim-bbye" 关闭当前 buffer
-map("n", "<C-w>", ":Bdelete!<CR>", opt)
+-- map("n", "<C-w>", ":Bdelete!<CR>", opt)

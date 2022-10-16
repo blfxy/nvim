@@ -39,14 +39,17 @@ packer.startup({ function(use)
         --         -- icons
         --         { "kyazdani42/nvim-web-devicons", opt = true }
         -- }
-        -- use {
-        --         "nvim-telescope/telescope.nvim", tag = '0.1.x',
-        --         requires = {
-        --                 { "nvim-lua/plenary.nvim" },
-        --                 { "windwp/nvim-ts-autotag" },
-        --                 { "p00f/nvim-ts-rainbow" }
-        --         }
-        -- }
+        use {
+                "nvim-telescope/telescope.nvim", tag = '0.1.x',
+                requires = {
+                        -- { "nvim-lua/plenary.nvim" },
+                        -- { "windwp/nvim-ts-autotag" },
+                        -- { "p00f/nvim-ts-rainbow" },
+                        -- { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+                        -- { "nvim-telescope/telescope-file-browser.nvim" },
+                        {"ahmedkhalf/project.nvim"},
+                }
+        }
         -- use { "glepnir/dashboard-nvim" }
         -- use { "lukas-reineke/indent-blankline.nvim" }
         -- use {
