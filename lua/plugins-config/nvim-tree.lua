@@ -64,4 +64,4 @@ nvim_tree.setup({
         -- cmd = "wsl-open",
         -- },
 })
-map('n', '<leader>t', ':NvimTreeToggle <CR>', opt)
+map('n', '<leader>b', ':NvimTreeToggle <CR>', opt)

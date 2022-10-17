@@ -24,19 +24,19 @@ telescope.setup({
                         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
                         -- the default case_mode is "smart_case"
                 },
-                file_browser = {
-                        theme = "ivy",
-                        -- disables netrw and use telescope-file-browser in its place
-                        hijack_netrw = true,
-                        mappings = {
-                                ["i"] = {
-                                        -- your custom insert mode mappings
-                                },
-                                ["n"] = {
-                                        -- your custom normal mode mappings
-                                },
-                        },
-                },
+                -- file_browser = {
+                --         theme = "ivy",
+                --         -- disables netrw and use telescope-file-browser in its place
+                --         hijack_netrw = true,
+                --         mappings = {
+                --                 ["i"] = {
+                --                         -- your custom insert mode mappings
+                --                 },
+                --                 ["n"] = {
+                --                         -- your custom normal mode mappings
+                --                 },
+                --         },
+                -- },
                 -- projects = {
                 --         patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
                 --         show_hidden = false,
@@ -46,15 +46,17 @@ telescope.setup({
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension("fzf")
+
 -- To get telescope-file-browser loaded and working with telescope,
 -- you need to call load_extension, somewhere after setup function:
-require("telescope").load_extension("file_browser")
-vim.keymap.set("n", "<leader>fb", ":Telescope file_browser <CR>", { noremap = true })
-
--- require('telescope').load_extension('projects')
+-- require("telescope").load_extension("file_browser")
+-- vim.keymap.set("n", "<leader>b", ":Telescope file_browser <CR>", { noremap = true })
 
 vim.keymap.set('n', 'ff', builtin.find_files, {})
-vim.keymap.set('n', 'fg', builtin.live_grep, {})
+vim.keymap.set('n', 'fw', builtin.live_grep, {})
+-- 工作目录下搜索当前光标字符
+vim.keymap.set('n', 'fgs', builtin.grep_string, {})
+vim.keymap.set('n', 'fh', builtin.oldfiles, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
-vim.keymap.set('n', 'fh', builtin.help_tags, {})
-vim.keymap.set('n', 'fo', builtin.oldfiles, {})
+-- vim.keymap.set('n', 'fh', builtin.help_tags, {})
+
