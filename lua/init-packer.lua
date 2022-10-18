@@ -39,16 +39,16 @@ packer.startup({ function(use)
         --         -- icons
         --         { "kyazdani42/nvim-web-devicons", opt = true }
         -- }
-        use {
-                "nvim-telescope/telescope.nvim", tag = '0.1.x',
-                requires = {
-                        -- { "nvim-lua/plenary.nvim" },
-                        -- { "windwp/nvim-ts-autotag" },
-                        -- { "p00f/nvim-ts-rainbow" },
-                        -- { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-                        -- { "nvim-telescope/telescope-file-browser.nvim" },
-                }
-        }
+        -- use {
+        --         "nvim-telescope/telescope.nvim", tag = '0.1.x',
+        --         requires = {
+        -- { "nvim-lua/plenary.nvim" },
+        -- { "windwp/nvim-ts-autotag" },
+        -- { "p00f/nvim-ts-rainbow" },
+        -- { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        -- { "nvim-telescope/telescope-file-browser.nvim" },
+        --         }
+        -- }
         -- use { "ahmedkhalf/project.nvim" }
         -- use { "glepnir/dashboard-nvim" }
         -- use { "lukas-reineke/indent-blankline.nvim" }
@@ -65,6 +65,7 @@ packer.startup({ function(use)
         -- use { "numToStr/Comment.nvim" }
         -- use { "p00f/nvim-ts-rainbow"}
         -- use { "windwp/nvim-autopairs", }
+        use { "akinsho/toggleterm.nvim", tag = '*' }
 end,
         config = {
                 display = {
