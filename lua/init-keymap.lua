@@ -31,6 +31,8 @@ map('n', '<A-l>', '<C-w>l', opt)
 map("c", "<C-j>", "<C-n>", { noremap = false })
 map("c", "<C-k>", "<C-p>", { noremap = false })
 
+-- ESC 退出终端模式
+map('t', '<ESC>', '<C-\\><C-N>', {})
 -- vim.g.python3_host_prog = '/usr/bin/python3'
 
 -- vim.api.nvim_set_keymap('n', '<c-P>',
