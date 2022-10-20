@@ -51,12 +51,12 @@ require('telescope').load_extension('projects')
 -- To get telescope-file-browser loaded and working with telescope,
 -- you need to call load_extension, somewhere after setup function:
 -- require("telescope").load_extension("file_browser")
--- vim.keymap.set("n", "<leader>b", ":Telescope file_browser <CR>", { noremap = true })
+-- vim.keymap.set("n", "<leader>bb", ":Telescope file_browser <CR>", { noremap = true })
 
 vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fw', builtin.live_grep, {})
 -- 工作目录下搜索当前光标字符
-vim.keymap.set('n', 'fgs', builtin.grep_string, {})
+vim.keymap.set('n', 'fc', builtin.grep_string, {})
 vim.keymap.set('n', 'fh', builtin.oldfiles, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
 -- vim.keymap.set('n', 'fh', builtin.help_tags, {})

@@ -35,6 +35,8 @@ map("c", "<C-k>", "<C-p>", { noremap = false })
 map('t', '<ESC>', '<C-\\><C-N>', {})
 -- vim.g.python3_host_prog = '/usr/bin/python3'
 
+-- map('n', 'w<LEFT>', ':vertical res -10 <CR>', {})
+-- map('n', 'w<RIGHT>', ':vertical res +10 <CR>', {})
 -- vim.api.nvim_set_keymap('n', '<c-P>',
 --     "<cmd>lua require('fzf-lua').files()<CR>",
 --     { noremap = true, silent = true })

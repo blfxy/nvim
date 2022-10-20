@@ -32,13 +32,10 @@ packer.startup({ function(use)
         --         "kyazdani42/nvim-tree.lua",
         --         -- 状态栏
         --         "nvim-lualine/lualine.nvim",
-        --         {
-        --                 "akinsho/bufferline.nvim",
-        --                 tag = "v2.*",
-        --         },
         --         -- icons
         --         { "kyazdani42/nvim-web-devicons", opt = true }
         -- }
+        use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
         -- use {
         --         "nvim-telescope/telescope.nvim", tag = '0.1.x',
         --         requires = {
@@ -65,7 +62,13 @@ packer.startup({ function(use)
         -- use { "numToStr/Comment.nvim" }
         -- use { "p00f/nvim-ts-rainbow"}
         -- use { "windwp/nvim-autopairs", }
-        use { "akinsho/toggleterm.nvim", tag = '*' }
+        -- use { "akinsho/toggleterm.nvim", tag = '*' }j
+        -- use { "anuvyklack/windows.nvim",
+        --         requires = {
+        --                 "anuvyklack/middleclass",
+        --                 "anuvyklack/animation.nvim"
+        --         },
+        -- }
 end,
         config = {
                 display = {

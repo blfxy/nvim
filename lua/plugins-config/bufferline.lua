@@ -6,7 +6,7 @@ end
 bufferline.setup({
         options = {
                 mode = 'buffer',
-                -- close_command = "Bdelete! %d",
+                close_command = "bdelete! %d",
                 -- diagnostics = "nvim_lsp",
                 offsets = {
                         { filetype = 'NvimTree' }
