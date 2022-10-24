@@ -1,4 +1,10 @@
-local cmp = require("cmp")
+-- nvim-cmp setup
+local OK, cmp = pcall(require, "cmp")
+if not OK then
+	print('找不到 nvim-cmp')
+	return
+end
+
 local kind_icons = {
 	Text = "",
 	Method = "",
@@ -26,23 +32,26 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = ""
 }
+
+-- luasnip setup
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
-cmp.setup {
+
+cmp.setup({
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-d>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<CR>'] = cmp.mapping.confirm {
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
-		},
-		['<Tab>'] = cmp.mapping(function(fallback)
+		}),
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -50,8 +59,8 @@ cmp.setup {
 			else
 				fallback()
 			end
-		end, { 'i', 's' }),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -59,13 +68,13 @@ cmp.setup {
 			else
 				fallback()
 			end
-		end, { 'i', 's' }),
+		end, { "i", "s" }),
 	}),
 	sources = {
 		{ name = "path" },
-		{ name = "luasnip" },
-		{ name = 'nvim_lsp' }, -- cmp-nvim-lsp
 		{ name = 'buffer', keyword_length = 3 }, -- cmp_buffer
+		{ name = 'nvim_lsp' }, -- cmp-nvim-lsp
+		{ name = "luasnip" },
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -74,9 +83,9 @@ cmp.setup {
 			vim_item.kind = string.format('%s  %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			-- Source
 			vim_item.menu = ({
+				path = "[PATH]",
 				buffer = "[BUFFER]",
 				nvim_lsp = "[LSP]",
-				path = "[PATH]",
 				luasnip = "[LUASNIP]",
 			})[entry.source.name]
 			return vim_item
@@ -86,9 +95,4 @@ cmp.setup {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-}
--- require('cmp').setup.cmdline(':', {
--- 	sources = {
--- 		{ name = 'cmdline' },
--- 	}
--- })
+})

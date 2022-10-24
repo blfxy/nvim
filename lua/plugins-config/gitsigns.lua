@@ -1,6 +1,6 @@
 local OK, gitsigns = pcall(require, "gitsigns")
 if not OK then
-  print("not found gitsigns")
+  print("找不到 gitsigns")
   return
 end
 gitsigns.setup({

@@ -1,6 +1,6 @@
 local OK, treesitter = pcall(require, "nvim-treesitter")
 if not OK then
-        print("not found treesitter")
+        print("找不到 treesitter")
         return
 end
 require('nvim-treesitter.configs').setup {

@@ -1,6 +1,6 @@
 local OK, lualine = pcall(require, "lualine")
 if not OK then
-        print('not found lualine')
+        print('找不到 lualine')
         return
 end
 -- Color table for highlights

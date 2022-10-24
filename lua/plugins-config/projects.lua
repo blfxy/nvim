@@ -1,6 +1,6 @@
 local OK, projects = pcall(require, "project_nvim")
 if not OK then
-        print("not found projects")
+        print("找不到 projects")
         return
 end
 projects.setup({

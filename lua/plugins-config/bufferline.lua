@@ -1,35 +1,35 @@
 local Ok, bufferline = pcall(require, "bufferline")
 if not Ok then
-        vim.notify("没有找到 bufferline")
-        return
+	vim.notify("找不到 bufferline")
+	return
 end
 bufferline.setup({
-        options = {
-                mode = 'buffer',
-                close_command = "bdelete! %d",
-                -- diagnostics = "nvim_lsp",
-                offsets = {
-                        { filetype = 'NvimTree' }
-                },
-                indicator = {
-                        icon = '▎', -- this should be omitted if indicator style is not 'icon'
-                        style = "icon" --'icon' | 'underline' | 'none',
-                },
-        },
-        highlights = {
-                buffer_selected = {
-                        italic = false
-                },
-                indicator_selected = {
-                        fg = { attribute = 'fg', highlight = 'Function' },
-                        italic = false
-                }
-        }
+	options = {
+		mode = "buffer",
+		close_command = "bdelete! %d",
+		-- diagnostics = "nvim_lsp",
+		offsets = {
+			{ filetype = "NvimTree" },
+		},
+		indicator = {
+			icon = "▎", -- this should be omitted if indicator style is not 'icon'
+			style = "icon", --'icon' | 'underline' | 'none',
+		},
+	},
+	highlights = {
+		buffer_selected = {
+			italic = false,
+		},
+		indicator_selected = {
+			fg = { attribute = "fg", highlight = "Function" },
+			italic = false,
+		},
+	},
 })
 
 local opt = {
-        noremap = true,
-        silent = true,
+	noremap = true,
+	silent = true,
 }
 local map = vim.api.nvim_set_keymap
 -- 左右Tab切换

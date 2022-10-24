@@ -1,6 +1,6 @@
 local OK, indent_blankline = pcall(require, 'indent_blankline')
 if not OK then
-        print("not found indent_blankline")
+        print("找不到 indent_blankline")
         return
 end
 indent_blankline.setup({

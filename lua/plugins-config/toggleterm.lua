@@ -1,6 +1,6 @@
 local OK, toggleterm = pcall(require, 'toggleterm')
 if not OK then
-        print('not found toggleterm')
+        print('找不到 toggleterm')
         return
 end
 toggleterm.setup {

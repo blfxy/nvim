@@ -1,6 +1,6 @@
 local OK, onedark = pcall(require, "onedark")
 if not OK then
-        print("not found onedark")
+        print("找不到 onedark!")
         return
 end
 -- Lua

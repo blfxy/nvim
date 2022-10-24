@@ -1,6 +1,6 @@
 local ok, telescope = pcall(require, "telescope")
 if not ok then
-        vim.notify("没有找到 telescope")
+        vim.notify("找不到 telescope")
         return
 end
 

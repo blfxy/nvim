@@ -1,6 +1,6 @@
 local OK, nvim_tree = pcall(require, "nvim-tree")
 if not OK then
-        vim.notify("没有找到 nvim-tree")
+        vim.notify("找不到 nvim-tree!")
         return
 end
 local map = vim.api.nvim_set_keymap
