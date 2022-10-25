@@ -3,12 +3,6 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "sumneko_lua", "rust_analyzer", "tsserver" },
 })
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
-
 -- 指定方式化方式
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
@@ -74,6 +68,8 @@ local lspconfig = require("lspconfig")
 local servers = {
 	sumneko_lua = require("lsp.lang-config.lua"),
 	rust_analyzer = require("lsp.lang-config.rust"),
+	-- "sumneko_lua",
+	-- "rust_analyzer",
 	-- tsserver = nil,
 }
 
@@ -83,6 +79,6 @@ for name, config in pairs(servers) do
 		config.on_setup(lspconfig[name], global_lsp_config)
 	else
 		-- 使用默认参数
-		lspconfig[name].setup({})
+		lspconfig[name].setup(global_lsp_config())
 	end
 end
