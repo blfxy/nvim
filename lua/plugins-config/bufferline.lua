@@ -36,4 +36,4 @@ local map = vim.api.nvim_set_keymap
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- "moll/vim-bbye" 关闭当前 buffer
--- map("n", "<C-w>", ":Bdelete!<CR>", opt)
+-- map("n", "<F4>", "cmd Bdelete", opt)

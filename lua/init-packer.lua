@@ -15,8 +15,8 @@ packer.startup({
 		use({ "williamboman/mason-lspconfig.nvim" })
 		use({ "neovim/nvim-lspconfig" })
 
-		use({ "jose-elias-alvarez/null-ls.nvim"})
-		use({"nvim-lua/plenary.nvim"})
+		use({ "jose-elias-alvarez/null-ls.nvim" })
+		use({ "nvim-lua/plenary.nvim" })
 
 		-- lsp补全相关
 		use({ "hrsh7th/nvim-cmp" })

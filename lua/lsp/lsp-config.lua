@@ -1,6 +1,17 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "rust_analyzer", "tsserver" },
+	ensure_installed = {
+		"sumneko_lua",
+		"rust_analyzer",
+		"tsserver",
+		"volar",
+		"cssls",
+		"html",
+		"jsonls",
+		"marksman",
+		"taplo", -- toml支持
+		"eslint",
+	},
 })
 
 -- 指定方式化方式
@@ -68,9 +79,13 @@ local lspconfig = require("lspconfig")
 local servers = {
 	sumneko_lua = require("lsp.lang-config.lua"),
 	rust_analyzer = require("lsp.lang-config.rust"),
-	-- "sumneko_lua",
-	-- "rust_analyzer",
-	-- tsserver = nil,
+	marksman = require("lsp.lang-config.markdown"),
+	tsserver = require("lsp.lang-config.ts"),
+	volar = require("lsp.lang-config.vue"),
+	html = require("lsp.lang-config.html"),
+	cssls = require("lsp.lang-config.css"),
+	jsonls = require("lsp.lang-config.json"),
+	taplo = require("lsp.lang-config.taplo"),
 }
 
 for name, config in pairs(servers) do
