@@ -4,8 +4,9 @@ vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
--- 使用相对行号
+-- 显示行号
 vim.wo.number = true
+-- 使用相对行号
 vim.wo.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = true
@@ -13,20 +14,15 @@ vim.wo.cursorline = true
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
 vim.wo.colorcolumn = "120"
--- 缩进4个空格等于一个Tab
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftround = true
--- >> << 时移动长度
--- vim.o.shiftwidth = 2
--- vim.bo.shiftwidth = 2
 -- 空格替代tab
 vim.o.expandtab = true
-vim.bo.expandtab = true
+-- 缩进4个空格等于一个Tab
+vim.o.tabstop = 4
+-- 换行时自动缩进4个空格
+vim.o.shiftwidth = 4
 -- 新行对齐当前行
 vim.o.autoindent = true
-vim.bo.autoindent = true
+-- 智能缩进
 vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
@@ -39,7 +35,7 @@ vim.o.incsearch = true
 vim.o.cmdheight = 2
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
-vim.bo.autoread = true
+-- vim.bo.autoread = true
 -- 禁止折行
 vim.wo.wrap = false
 -- 光标在行首尾时<Left><Right>可以跳到下一行

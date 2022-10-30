@@ -25,6 +25,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.rustfmt,
+		formatting.markdownlint,
 		formatting.prettier.with({
 			filetypes = {
 				"javascript",
