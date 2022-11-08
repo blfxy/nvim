@@ -39,7 +39,16 @@ null_ls.setup({
 				"scss",
 				"vue",
 			},
-			-- prefer_local = "node_modules/.bin",
+			prefer_local = "node_modules/.bin",
+			extra_args = function(params)
+				print(params)
+				return params.options
+					and params.options.tabSize
+					and {
+						"--tab-width",
+						params.options.tabSize,
+					}
+			end,
 		}),
 
 		-- code_actions.eslint,
