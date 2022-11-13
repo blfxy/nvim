@@ -16,7 +16,7 @@ projects.setup({
 
 	-- All the patterns used to detect root dir, when **"pattern"** is in
 	-- detection_methods
-	patterns = { ".git", "package.json", "Cargo.toml" },
+	patterns = { ".git", "README.md", "package.json", "Cargo.toml" },
 
 	-- Table of lsp clients to ignore by name
 	-- eg: { "efm", ... }
